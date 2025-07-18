@@ -1,3 +1,2 @@
 # Ergot-Disease-Detection
-......
-ddggg
+******
