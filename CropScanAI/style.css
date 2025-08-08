@@ -64,7 +64,7 @@ header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('pearlmillet-banner.jpg') center/cover no-repeat;
+  background: url('images/pearlmillet-banner.jpg') center/cover no-repeat;
   filter: blur(4px);
   z-index: -1;
 }
@@ -381,3 +381,198 @@ font-family: Arial, sans-serif;
   }
 }
 
+/* ===== CARD GRID LAYOUT ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== CARD STYLES ===== */
+.info-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card-header i { font-size: 1.2rem; }
+
+.card-content {
+    padding: 20px;
+}
+.card-item, .symptom-stage, .danger-item, .prevention-method {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.card-item:last-child, .symptom-stage:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.card-image {
+    padding: 0 20px 20px;
+}
+.card-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.caption {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* ===== SPECIAL CARD VARIANTS ===== */
+.accent-card .card-header {
+    background: #db6634;
+}
+.danger-card .card-header {
+    background: #f82811;
+}
+.prevention-card .card-header {
+    background: #198613;
+}
+.symptoms-card .card-header {
+    background: #137e86;
+}
+
+/* ===== STAGE MARKERS ===== */
+.stage-marker {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 10px;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+.checklist li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checklist i {
+    color: #3498db;
+}
+
+/* ===== HERO SECTION ===== */
+.ergot-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/ergot-field.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 30px;
+}
+.ergot-hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.ergot-hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
+
+/* FAQ STYLES */
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f0f7eb;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #c3eea6;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c5e1a;
+  font-weight: 600;
+}
+
+.faq-question i {
+  transition: transform 0.8s ease;
+  color: #4a8c2c;
+}
+
+.faq-answer {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, padding 0.3s ease;
+  background-color: white;
+}
+
+.faq-answer p {
+  padding: 15px 0;
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Active state */
+.faq-item.active .faq-question {
+  background-color: #e0f0d5;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 25px;
+}
